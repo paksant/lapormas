@@ -57,7 +57,7 @@ function renderMainView() {
 function brandMark(size = "md") {
   const dims = size === "lg" ? "w-16 h-16 text-2xl" : "w-10 h-10 text-base";
   return `
-    <div class="${dims} shrink-0 rounded-2xl bg-gradient-to-br from-navy-700 to-navy-950 ring-1 ring-gold-400/60 flex items-center justify-center font-serif font-semibold text-gold-300 shadow-lg shadow-black/30">
+    <div class="${dims} mx-auto shrink-0 rounded-2xl bg-gradient-to-br from-navy-700 to-navy-950 ring-1 ring-gold-400/60 flex items-center justify-center font-serif font-semibold text-gold-300 shadow-lg shadow-black/30">
         LM
     </div>`;
 }
@@ -141,7 +141,7 @@ function renderAuthView(errorMessage = "") {
             <div class="text-center mb-6">
                 <div class="mx-auto mb-3">${brandMark("lg")}</div>
                 <h2 class="font-serif text-2xl font-semibold text-white tracking-tight">LaporMas</h2>
-                <p class="text-xs text-navy-300 font-medium mt-1.5 leading-relaxed">Sistem Laporan Harian Staf Tata Usaha<br>SMA Negeri 6 Surakarta</p>
+                <p class="text-xs text-navy-300 font-medium mt-1.5 leading-relaxed">Laporan Operasional Rutin Manajemen Administrasi Sekolah<br>SMA Negeri 6 Surakarta</p>
             </div>
 
             <div class="bg-white rounded-3xl shadow-2xl shadow-black/30 border border-white/10 p-6 sm:p-8">
