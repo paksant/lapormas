@@ -103,7 +103,7 @@ function getHeaderHTML() {
                     ${svgIcon("reports", "w-3.5 h-3.5")} Rekap Laporan
                 </button>
                 <button data-tab-btn="rekap" class="tab-btn px-4 py-2.5 text-xs font-semibold rounded-t-lg border-b-2 transition-colors flex items-center gap-1.5">
-                    ${svgIcon("shield", "w-3.5 h-3.5")} Rekap Kehadiran
+                    ${svgIcon("shield", "w-3.5 h-3.5")} Rekap Pengisian
                 </button>
                 <button data-tab-btn="pengguna" class="tab-btn px-4 py-2.5 text-xs font-semibold rounded-t-lg border-b-2 transition-colors flex items-center gap-1.5">
                     ${svgIcon("users", "w-3.5 h-3.5")} Kelola Pengguna
@@ -114,7 +114,7 @@ function getHeaderHTML() {
                     ${svgIcon("reports", "w-3.5 h-3.5")} Laporan Harian
                 </button>
                 <button data-tab-btn="rekap" class="tab-btn px-4 py-2.5 text-xs font-semibold rounded-t-lg border-b-2 transition-colors flex items-center gap-1.5">
-                    ${svgIcon("shield", "w-3.5 h-3.5")} Rekap Kehadiran
+                    ${svgIcon("shield", "w-3.5 h-3.5")} Rekap Pengisian
                 </button>
             </nav>`}
         </div>
@@ -234,7 +234,7 @@ function renderAuthView(errorMessage = "") {
 }
 
 // ==========================================================
-// STAFF SHELL (dengan tab: Laporan Harian / Rekap Kehadiran)
+// STAFF SHELL (dengan tab: Laporan Harian / Rekap Pengisian)
 // ==========================================================
 function renderStaffShell() {
   const mainContent = document.getElementById("main-content");
@@ -253,7 +253,7 @@ function renderStaffShell() {
 }
 
 // ==========================================================
-// ADMIN SHELL (dengan tab: Rekap Laporan / Rekap Kehadiran / Kelola Pengguna)
+// ADMIN SHELL (dengan tab: Rekap Laporan / Rekap Pengisian / Kelola Pengguna)
 // ==========================================================
 function renderAdminShell() {
   const mainContent = document.getElementById("main-content");
