@@ -39,7 +39,7 @@ function formatDayLabel(isoDateStr) {
 }
 
 /**
- * Merender panel Rekap Kehadiran (dipakai bersama oleh Admin & Staf):
+ * Merender panel Rekap Pengisian (dipakai bersama oleh Admin & Staf):
  * menampilkan staf mana saja yang sudah mengisi laporan harian pada
  * rentang Senin–Jumat suatu minggu, ditandai dengan centang (V) hijau.
  */
@@ -52,7 +52,7 @@ export function initRecapPanel(container) {
   container.innerHTML = `
     <div class="animate-fade-in space-y-6">
       <div>
-        <h2 class="font-serif text-lg font-semibold text-slate-900 tracking-tight">Rekap Kehadiran Laporan</h2>
+        <h2 class="font-serif text-lg font-semibold text-slate-900 tracking-tight">Rekap Pengisian Laporan</h2>
         <p class="text-xs text-slate-500">Pantau staf yang sudah mengisi laporan harian pada minggu berjalan (Senin–Jumat).</p>
       </div>
 
