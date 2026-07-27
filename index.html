@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-[#faf9fc]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>LaporMas · SMAN 6 Surakarta</title>
+    <meta name="description" content="Sistem Laporan Harian Staf Tata Usaha SMA Negeri 6 Surakarta">
+
+    <!-- Google Fonts: Fraunces (display/brand) + Plus Jakarta Sans (UI/body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- jsPDF + AutoTable (untuk fitur Unduh PDF Laporan) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50:  '#f5f7fc',
+                            100: '#eaeff9',
+                            200: '#d3ddf1',
+                            300: '#aebde3',
+                            400: '#8398d1',
+                            500: '#6178bd',
+                            600: '#4c60a3',
+                            700: '#404f87',
+                            800: '#38436d',
+                            900: '#323a59',
+                            950: '#20243a',
+                        },
+                        gold: {
+                            50:  '#fdf8ef',
+                            100: '#f8ecd4',
+                            300: '#edcd8f',
+                            400: '#e0ae5b',
+                            500: '#cc903c',
+                            600: '#a8722c',
+                        },
+                        blush: {
+                            50: '#fdf4f6',
+                            100: '#fbe8ec',
+                            300: '#f0b8c6',
+                            400: '#e393a8',
+                        },
+                        sage: {
+                            50: '#f2f8f4',
+                            100: '#e1f0e6',
+                            300: '#aed8bb',
+                            400: '#82c093',
+                        },
+                    },
+                    boxShadow: {
+                        soft: '0 1px 2px rgba(15,23,42,.04), 0 8px 24px -12px rgba(15,23,42,.10)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes toastIn { from { opacity: 0; transform: translateY(-6px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes toastOut { to { opacity: 0; transform: translateY(-6px) scale(.98); } }
+        .animate-toast-in { animation: toastIn .18s ease-out; }
+        .animate-toast-out { animation: toastOut .18s ease-in forwards; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeInUp .25s ease-out; }
+
+        .modal-backdrop { background: rgba(10, 14, 31, .55); backdrop-filter: blur(2px); }
+
+        ::-webkit-scrollbar { height: 8px; width: 8px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+
+        [data-tab-panel] { display: none; }
+        [data-tab-panel].active { display: block; }
+    </style>
+</head>
+<body class="h-full font-sans antialiased text-slate-800 bg-[#faf9fc] selection:bg-navy-200 selection:text-navy-900">
+
+    <div id="app" class="min-h-full flex flex-col">
+        <!-- Loading State -->
+        <div id="loading-spinner" class="fixed inset-0 bg-gradient-to-br from-navy-50 via-white to-gold-50 flex flex-col items-center justify-center z-[200]">
+            <div class="flex flex-col items-center gap-3.5">
+                <div class="h-11 w-11 rounded-full border-[3px] border-navy-200 border-t-navy-500 animate-spin"></div>
+                <p class="text-xs font-medium text-navy-500 tracking-wide">Memuat LaporMas…</p>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Mount Point -->
+        <div id="main-content" class="flex-grow flex flex-col"></div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
